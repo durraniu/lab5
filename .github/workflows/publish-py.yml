@@ -22,11 +22,10 @@ jobs:
         with:
           version: "latest"
 
-      - name: Set up Python
-        run: uv python install 3.12
-
-      - name: Install dependencies
-        run: uv sync
+      - name: Set up Python and install dependencies
+        run: |
+          uv python install 3.12
+          uv sync
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
